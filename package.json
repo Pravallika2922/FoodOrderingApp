@@ -1,0 +1,35 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "Trying to understand",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pravallika2922/NamasteReact.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Lakshmi Pravallika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pravallika2922/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/Pravallika2922/NamasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "Last 2 versions"
+  ]
+}
