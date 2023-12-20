@@ -10,6 +10,12 @@
 .search {
   margin: auto;
 }
+.btn-search {
+  color: white;
+  cursor: pointer;
+  padding: 2px;
+  background-color: black;
+}
 .nav-items {
   padding: 0px 20px;
   color: rgb(151, 147, 147);
@@ -27,19 +33,18 @@
 .res-container {
   display: flex;
   flex-wrap: wrap;
-  width: 100vh;
-  margin: auto;
+  justify-content: center;
+  gap: 40px 25px;
 }
 .res-card {
-  width: 250px;
-
-  margin: 5px;
-  background-color: #f0f0f0;
-  padding: 5px;
+  width: 200px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 11px;
+  cursor: pointer;
 }
 .res-card:hover {
-  border: 1px solid #8d8d8d73;
-  cursor: pointer;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 }
 .search > input {
   margin: 20px;
@@ -47,7 +52,7 @@
 }
 .res-logo {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 .res-img {
   width: 100%;
@@ -57,9 +62,8 @@
 .res-details1,
 .res-details2 {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
+  align-items: center;
+  gap: 10px;
 }
 .res-details1 > p {
   padding: 2px;
@@ -69,14 +73,6 @@
 }
 .res-details2 > p {
   padding: 10px;
-}
-/* .footer {
-  display: flex;
-  color: rgb(165, 163, 163);
-  background-color: rgb(238, 236, 236);
-  justify-content: space-between;
-  width: 100%;
-  position: fixed;
 }
 .About > a,
 .contact > a,
@@ -102,8 +98,8 @@
   flex-direction: column;
   font-size: 15px;
   margin-right: 20px;
-} */
-.btn-toprated {
+}
+*/ .btn-toprated {
   margin: 10px;
   cursor: pointer;
 }
@@ -120,6 +116,17 @@
   background-color: #f0f0f0;
   margin: 20px;
 }
+.shimmer-carousal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.shimmer-carousal-cards {
+  width: 200px;
+  height: 200px;
+  background-color: #f0f0f0;
+  margin: 20px;
+}
 .login {
   padding: 0px 20px;
   cursor: pointer;
@@ -128,4 +135,107 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.link {
+  color: black;
+  text-decoration: none;
+}
+.menu-header {
+  height: 30vh;
+  background-color: #000;
+  color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu-header .menu-header-left img {
+  width: 250px;
+  height: 170px;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-header .menu-header-right .top h1 {
+  font-size: 40px;
+  font-weight: normal;
+}
+
+.menu-header .menu-header-right .top h3 {
+  font-weight: normal;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+.menu-header .menu-header-right .bottom {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.menu-header .menu-header-right .bottom h4 {
+  border-right: 4px solid #ccc;
+  padding-right: 20px;
+}
+
+.menu-main {
+  /* margin-top: 100px; */
+  margin: 80px 150px;
+}
+
+.menu-main h2 {
+  font-size: 30px;
+  opacity: 0.8;
+}
+
+.menu-main .items {
+  font-size: 14px;
+  opacity: 0.6;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+.menu-main-card-container {
+  margin-top: 50px;
+  border-radius: 7px;
+}
+
+.menu-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  background-color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #3b3a3a;
+}
+
+.menu-card-left .menu-name {
+  font-size: 24px;
+  opacity: 0.8;
+}
+
+.menu-card-left .menu-price {
+  font-weight: normal;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+.menu-card-left .menu-description {
+  font-weight: normal;
+  opacity: 0.8;
+  margin-top: 15px;
+}
+
+.menu-card-right img {
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
 }

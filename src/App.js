@@ -2,43 +2,32 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
+import About from "./components/About";
+import ContactUs from "./components/ContactUs";
+import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
-// const Footer = () => {
-//   return (
-//     <div className="footer">
-//       <div className="footer-heading">
-//         <h3>Zomato</h3>
-//       </div>
-//       <div className="About">
-//         <a href="\">Who we are</a>
-//         <a href="\">Who we are</a>
-//         <a href="\">Who we are</a>
-//         <a href="\">Who we are</a>
-//       </div>
-//       <div className="contact">
-//         <a href="\">Phone number</a>
-//         <a href="\">Email Id</a>
-//         <a href="\">Postal Address</a>
-//       </div>
-//       <div className="About Restaurants">
-//         <a href="\">Who we are</a>
-//         <a href="\">Who we are</a>
-//       </div>
-//       <div className="social-links">
-//         <a href="\">FB</a>
-//         <a href="\">Instagram</a>
-//       </div>
-//     </div>
-//   );
-// };
 const App = () => {
   return (
     <div className="app">
       <Header />
-      <Body />
-      {/* <Footer /> */}
+      <Outlet />
     </div>
   );
 };
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { path: "/", element: <Body /> },
+      { path: "/about", element: <About /> },
+      { path: "/contact", element: <ContactUs /> },
+      { path: "/restaurants/:resId", element: <RestaurantMenu /> },
+    ],
+    errorElement: <Error />,
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(<RouterProvider router={appRouter} />);
