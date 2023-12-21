@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CDN_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const status = useOnlineStatus();
@@ -34,6 +35,11 @@ const Header = () => {
           <li>
             <Link to="/cart" className="link">
               Cart
+            </Link>
+          </li>
+          <li>
+            <Link to="/grocery" className="link">
+              Grocery
             </Link>
           </li>
           <li>OnlineStatus:{status ? "✅" : "🔴"}</li>

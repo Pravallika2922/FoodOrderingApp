@@ -13,7 +13,7 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   // const { listOfRestaurants, filteredRestaurants } = useRestaurants();
   const status = useOnlineStatus();
-  console.log(status);
+
   useEffect(() => {
     fetchData();
   }, []);

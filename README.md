@@ -103,4 +103,13 @@ In class components, component did mount is called only once. For all the other 
 -keep the components as light as possible.
 -create custom Hooks for reusability. Creating custom hooks is not mandatory but using them makes the code more readable.(create hooks in utils folder, create separate files for different Hooks)
 
--
+One of the most important way to optimize the app is :
+Chunking or code splitting or dynamic bundling or Lazy Loading or On Demand Loading- breaking down our app into smaller chunks.
+
+Bundlers like Parcel builds or bundles the whole into one js file in dist folder, but when we are building large scale projects the size of this JS increases and takes time to load for the user. Hence we need to enable the bundler to create separate JS files.
+For example: If we have Grocery component like Swiggy InstaMart and it has lot of other components under it. We should see that Grocery data is not loaded intially untill the user clicks on Grocery link.
+We can achieve this by using lazy component provided by the React.
+
+# Suspense and fallback
+
+-React is very fast that when we click the Grocery, the data is not ready yet to render and it throws an error. To make the react wait for the data. React provides a component called Suspense. We need to wrap the Grocery in Suspense tag and provide a fallback (the screen or message that needs to be displayed meanwhile).

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { RES_URL } from "../utils/constants";
 
 const useRestaurantMenu = (resId) => {
+  console.log(resId);
+  console.log(RES_URL + resId);
   const [resInfo, setResInfo] = useState(null);
   useEffect(() => fetchData(), []);
   const fetchData = async () => {
