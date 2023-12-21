@@ -67,7 +67,10 @@ const RestaurantMenu = () => {
       </header>
 
       <div className="menu-main">
-        <h2>Menu</h2>
+        <div className="menu-heading">
+          <h2>Menu</h2>
+          <span aria-hidden={true} className="accordion-icon" />
+        </div>
         <h3 className="items">{itemCards.length} items</h3>
         <div className="menu-main-card-container">
           {itemCards.map((item) => (

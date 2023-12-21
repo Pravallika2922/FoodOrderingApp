@@ -49,9 +49,47 @@
   -Outlet is a component provided by the React router dom. Outlet compoenent will be replaced by the path based on the route
 - Never use a anchor tag to route from one page to another page. Because when the anchor tag is clicked it will reload the whole page. Instead use the Link tag.
 
-**\*** This is the reason react is called SINGLE PAGE APPLICATIONS, even though we route to different paths the browser will not reload the whole page. In react everything is a component.****\*****
+**\*** This is the reason react is called SINGLE PAGE APPLICATIONS, even though we route to different paths the browser will not reload the whole page. In react everything is a component.\***\*\*\*\***
 
 # 2 types of routing in web apps
 
 1. client side routing - In client side, the URL is updated without making any network call render the new UI and then make use of fetch to make any network calls. This enables faster and dynamic user experience.
 2. server side routing - In tradiitonal websites a browser requests the server for documents, it downloads and evaluates the CSS,JS and renders the HTML accordingly. if the user clicks any link the process is again followed.
+
+# Class Based Compoenents
+
+-Class based compoenents are nothing but simple javascript classes that are extended from React.Compoenent class.
+
+- We need to use contructor and super keyword.
+
+-state variables should never be changed directly. They should be changed using this.setState
+
+# react Lifecycle Methods
+
+-First the constructor is called , then render method and then componenetDidMount is called.
+
+- If there is parent child relationship.
+  1st parent constructor, then parent render then it realises there is children. Now the children compoenent life cycle methods are initiated. After the child compoenent life cycle methods are done. The parent component's component did mount method is called.
+
+-ComponentDidMount method is used to make API calls.
+
+--------Life cycle Methods---------
+
+----Mounting------
+
+1. constructor is called
+2. render method is called with dummy data
+3. Component did mount method is called and API call is made and state is changed using setstate method.
+   -----Updating-----
+4. render is method is again called with new API data
+5. HTML page is seen with new data.
+6. Compoenet Did Update method is called
+   -----UnMounting----
+   1.ComponentWillUnMount method is called when the component is removed from the page. Clean up activities should be taken care in unmounting phase.
+   For Example: we set a setInterval in component did mount phase and go to other component, the set interval will not stop because React is a SINPLE PAGE APPLICATION the component is removed but the page is not loaded again. Hence we need to clear the intervals or timeouts if any in the unmounting phase.
+
+**\*\*\*\*** Never Compare life cycle methods to functional components ****\*\*\*\*****
+
+--- the key difference is
+in useEffect if we dont give dependancy array, it is called after every RENDER.
+In class components, component did mount is called only once. For all the other renders COMPONENET DID UPDATE is called.

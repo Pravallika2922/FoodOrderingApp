@@ -231,11 +231,57 @@
   opacity: 0.8;
   margin-top: 15px;
 }
-
+.menu-heading {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
 .menu-card-right img {
   height: 100px;
   width: 100px;
   border-radius: 5px;
   background-size: cover;
   background-position: center;
+}
+.accordion-icon {
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  height: 8px;
+  pointer-events: none;
+  transform: translateY(-2px) rotate(45deg);
+  width: 8px;
+  margin: auto;
+}
+
+.accordion-icon--rotated {
+  transform: translateY(2px) rotate(-135deg);
+}
+.user-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  color: black;
+  border-radius: 10px;
+  width: 300px;
+  height: 500px;
+  margin: auto;
+}
+.user-card:hover {
+  border: 1px solid gray;
+}
+.user-details-bottom {
+  flex: 1;
+  font-size: 24px;
+  margin: auto;
+  color: rgb(54, 54, 54);
+}
+.user-img-top {
+  flex: 1;
+}
+.user-img-top > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
