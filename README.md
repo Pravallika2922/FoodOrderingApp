@@ -88,8 +88,19 @@
    1.ComponentWillUnMount method is called when the component is removed from the page. Clean up activities should be taken care in unmounting phase.
    For Example: we set a setInterval in component did mount phase and go to other component, the set interval will not stop because React is a SINPLE PAGE APPLICATION the component is removed but the page is not loaded again. Hence we need to clear the intervals or timeouts if any in the unmounting phase.
 
-**\*\*\*\*** Never Compare life cycle methods to functional components ****\*\*\*\*****
+**\*\*\*\*** Never Compare life cycle methods to functional components \***\*\*\*\*\*\*\***
 
 --- the key difference is
 in useEffect if we dont give dependancy array, it is called after every RENDER.
 In class components, component did mount is called only once. For all the other renders COMPONENET DID UPDATE is called.
+
+# Optimizing our App.
+
+-Follow ++++++++++++SINGLE RESPONSIBILITY PRINCIPAL.++++++++++++++++++
+
+-Maintain the code in modular fashion makes the code becomes reusable, testable and maintainable.
+-Tracing the bugs and fixing it is easy.
+-keep the components as light as possible.
+-create custom Hooks for reusability. Creating custom hooks is not mandatory but using them makes the code more readable.(create hooks in utils folder, create separate files for different Hooks)
+
+-

@@ -4,12 +4,16 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { API_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+// import useRestaurants from "../utils/useRestaurants";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [inputSearch, setInputSearch] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-
+  // const { listOfRestaurants, filteredRestaurants } = useRestaurants();
+  const status = useOnlineStatus();
+  console.log(status);
   useEffect(() => {
     fetchData();
   }, []);
@@ -19,10 +23,10 @@ const Body = () => {
     const json = await data.json();
     console.log(json);
     setListOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -33,6 +37,9 @@ const Body = () => {
     setFilteredRestaurants(filteredRestaurants);
   };
 
+  if (status === false) {
+    return <h1>Looks like you are offline. Please check internet status!!!</h1>;
+  }
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (

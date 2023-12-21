@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { CDN_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
-
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+  const status = useOnlineStatus();
 
   return (
     <div className="header">
@@ -35,6 +36,7 @@ const Header = () => {
               Cart
             </Link>
           </li>
+          <li>OnlineStatus:{status ? "✅" : "🔴"}</li>
           <button
             className="login"
             onClick={() =>
