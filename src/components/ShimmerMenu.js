@@ -3,19 +3,19 @@ import React from "react";
 const ShimmerMenu = () => {
   return (
     <div className="menu shimmer-menu">
-      <header className="menu-header shimmer-menu stroke animate">
-        <div className="menu-header-left shimmer-menu stroke animate">
-          <img src="" alt="" className="stroke animate" />
+      <header className="menu-header shimmer-menu ">
+        <div className="menu-header-left shimmer-menu ">
+          <img src="" alt="" />
         </div>
-        <div className="menu-header-right shimmer-menu stroke animate">
-          <div className="top shimmer-menu stroke animate">
+        <div className="menu-header-right ">
+          <div className="top shimmer-menu ">
             <h1></h1>
             <h3></h3>
           </div>
-          <div className="bottom shimmer-menu stroke animate">
-            <h4 className="avg-rating shimmer-menu stroke animate">
+          <div className="bottom shimmer-menu ">
+            <h4 className="avg-rating shimmer-menu ">
               <span
-                className="icons shimmer-menu stroke animate"
+                className="icons shimmer-menu "
                 stroke
                 animate
                 style={{
@@ -26,9 +26,9 @@ const ShimmerMenu = () => {
               ></span>
               <span></span>
             </h4>
-            <h4 className="time shimmer-menu stroke animate">
+            <h4 className="time shimmer-menu ">
               <span
-                className="icons stroke animate"
+                className="icons "
                 style={{
                   position: "relative",
                   top: "2px",
@@ -42,18 +42,18 @@ const ShimmerMenu = () => {
         </div>
       </header>
 
-      <div className="menu-main shimmer-menu-main shimmer-menu stroke animate">
+      <div className="menu-main shimmer-menu-main shimmer-menu ">
         <h2></h2>
-        <h3 className="items shimmer-menu stroke animate"></h3>
-        <div className="menu-main-card-container shimmer-menu stroke animate">
-          <div className="menu-card shimmer-menu stroke animate">
-            <div className="menu-card-left shimmer-menu stroke animate">
-              <h2 className="menu-name shimmer-menu stroke animate"></h2>
-              <h3 className="menu-price shimmer-menu stroke animate"></h3>
-              <h4 className="menu-description shimmer-menu stroke animate"></h4>
+        <h3 className="items shimmer-menu "></h3>
+        <div className="menu-main-card-container shimmer-menu ">
+          <div className="menu-card shimmer-menu">
+            <div className="menu-card-left shimmer-menu ">
+              <h2 className="menu-name shimmer-menu"></h2>
+              <h3 className="menu-price shimmer-menu"></h3>
+              <h4 className="menu-description shimmer-menu"></h4>
             </div>
-            <div className="menu-card-right shimmer-menu stroke animate">
-              <img src="" alt="" className="stroke animate" />
+            <div className="menu-card-right shimmer-menu">
+              <img src="" alt="" />
             </div>
           </div>
         </div>

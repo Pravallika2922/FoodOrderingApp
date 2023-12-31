@@ -33,11 +33,25 @@
 -useEffect is called everytime the component renders if there is no dependency array.
 -If there is an empty dependancy array,then useEffect is called only the first time the component is rendered.
 -If there is a dependancy array is btnName, then useEffect is called everytime the btnName is changed.
+-UseEffect hook accepts a callback function and dependancy array as arguments.
+-Mutations.timers,subscriptions,loggers are not allowed in the regular code, hence useEffect is used.
+-useEffect(async()=?{}) is not possible because, normally useEffect expects a timer, logging etc side effect functions. If we have to make an API call we need to write another function inside useEffect.
+-Cleaning up activity- Usually useEffect creates resources which needs to be cleaned by the component before leaving the screen. useEffect returns a clean up function.
+eg: useEffect(()=>{
+const timer=setInterval(()=>console.log("timer running"));
+return ()=>{
+clearTimer(timer)
+}
+})
 
 # useState
 
 -Never create state variables inside loops, if else blocks or functions.
 -They should be at the higher level of the component.
+-useState component returns a state variable and a function to update the state variable.
+-Lazy initial state: The initial state argument in the useState is used only during the first render. We do not need in subsequent renders. If the initial state is the result of a complex calculations, we can put them in a function.
+-If the compoenent re render results in the same as the previous render, it will bail out the rendering process.
+-Batching of renders is done to optimize the app.
 
 # React-Router-DOM
 
@@ -113,3 +127,70 @@ We can achieve this by using lazy component provided by the React.
 # Suspense and fallback
 
 -React is very fast that when we click the Grocery, the data is not ready yet to render and it throws an error. To make the react wait for the data. React provides a component called Suspense. We need to wrap the Grocery in Suspense tag and provide a fallback (the screen or message that needs to be displayed meanwhile).
+
+# ESLint
+
+-It is an open source library which analyzes our code for errors and enforces coding standards to be followed.
+-It also helps in maintaining consistency across the codebase.
+-It enables the developer to analyze and fix the issues.
+
+# Tailwind CSS
+
+-Installed tailwind CSS and PostCSS. PostCSS is a tool used to transform the CSS in JS. Tailwind in the backend uses PostCSS to transform the CSS in JS.
+-Create a postcssrc folder and let the post css know that tailwind is using it.
+-when tailwind is installed it automatically created tailwind.config file. edit the file and put the content. It tells the tailwind what kind of extension files might contain tailwind in it.
+
+-
+
+# Higher order component
+
+-It is a function that takes a component and returns a component.
+It takes a compoenent and enhances it and returns it back.
+-Higher Order functions are pure functions. We will not change the function of the actual component, we will just enhance the component.
+
+# Redux
+
+- A state management tool.
+- React and Redux are two different libraries.
+- Using Redux is not mandatory. Zustand is alternative library to Redux.
+- Redux offers two libraries: React-Redux and Redux Toolkit.
+- Update the store: When add button is clicked, the action is dispatched which has a reducer function to update the slice in the store.
+- Read the value from the store- As the component is subscribed to the store using a selector, the values are read easily.
+
+Steps:
+Install libraries: @reduxjs/toolkit and react-redux.
+Build our store using configurestore from "@reduxjs/toolkit"
+connect our store to app using Provider from "react-redux"
+create a slice using createSlice from "readux toolkit"
+dispatch an action
+read the data using selector - using a useSelector from "react-redux". Subscribe to the exact data that you need from the store instead of subscribing to the whole store. subscribing to whole store effects the performance of the application.
+
+# One main difference between older version of Redux to Redux Toolkit is. Older version of redux does not allow state to be mutated and returning the state is mandatory but in Redux Toolkit state mutation is allowed.
+
+Redux toolkit uses Immer library to understand the difference between the changes in the state.
+
+# Types of testing (developer)
+
+-Unit testing - testing the react components in isolation.
+-Integration testing - testing the integration of components.
+-End to End testing (e2e testing) - testing the react application as soon as the user landing on the web app to leaving the application.
+As a developer we are concerned about the first two types of testing.
+DOM testing library is a base for all the framework related testing libraries.
+React testing library is the mostly used library. If we built are application using create react app, it has built in testing library in it.
+React testing library used Jest behind the scenes.
+
+# Setting up our project for testing
+
+-Install React testing library
+-Install jest
+-Install Babel
+-Create babel.config.js file
+-configure parcel config file to disable default babel transpilation. (We created babel cofig file in the prev step, but Parcel alreacy has an existing babel transpiler. In order to make parcel use the newly created config file we need to create .parcelrc file.)
+-Jest configuration (initialize the jest) npx jest --init creates a configuration file for jest
+-install jsdom library if we are using jest version 28 and above.
+-install @babel/preset-react to make JSX work in test cases.
+-include this in babel config file.
+-install @testing-library/jest-dom
+-test and it are both same. Just different naming conventions
+
+-
